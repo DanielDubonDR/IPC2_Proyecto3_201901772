@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from webapp import views
+from django.conf.urls import handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.inicio)
+    path('', views.inicio),
 ]
+
+handler404='webapp.views.error'

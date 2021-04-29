@@ -1,5 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.defaults import page_not_found
+
 # Create your views here.
 def inicio(request):
-    return render(request, template_name='index.html')
+    return render(request, template_name='404.html')
+
+def error(request, exception):
+    return page_not_found(request, template_name='404.html')
