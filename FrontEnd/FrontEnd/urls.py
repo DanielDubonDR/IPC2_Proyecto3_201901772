@@ -20,8 +20,15 @@ from django.conf.urls import handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.inicio),
-    path('Info.html', views.info),
+    path('', views.Inicio),
+    path('Inicio.html', views.Inicio),
+    path('Info.html', views.Info),
+    path('Ayuda.html', views.Ayuda),
+    path('CargarArchivo.html', views.CargarArchivo),
+    path('Filtro1.html', views.Filtro1),
+    path('Filtro2.html', views.Filtro2),
+    path('Documentacion.html', views.Documentacion),
+    path('ConsultarDatos.html', views.ConsultarDatos),
 ]
 
 handler404='webapp.views.error'
