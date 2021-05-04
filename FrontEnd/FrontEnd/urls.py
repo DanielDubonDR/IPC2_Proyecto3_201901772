@@ -21,6 +21,7 @@ from django.conf.urls import handler404
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.inicio),
+    path('Info.html', views.info),
 ]
 
 handler404='webapp.views.error'
