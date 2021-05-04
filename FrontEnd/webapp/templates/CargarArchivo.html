@@ -120,14 +120,14 @@
                                     <div class="col-md-6">
                                         <h6 class="text-primary">&nbsp;Entrada</h6>
                                         <br>
-                                        <textarea class="form-control" aria-label="With textarea" rows="10" placeholder="Entrada"></textarea>
+                                        <textarea class="form-control" id="contenido-archivo" aria-label="With textarea" rows="11" placeholder="Entrada"></textarea>
                                         <br>
                                         <button type="button" class="btn btn-success mb-3 pull-right">Enviar</button>
                                     </div>
                                     <div class="col-md-6">
                                         <h6 class="text-primary">&nbsp;Salida</h6>
                                         <br>
-                                        <textarea class="form-control" aria-label="With textarea" rows="10" placeholder="Salida"></textarea>
+                                        <textarea class="form-control" aria-label="With textarea" rows="11" placeholder="Salida"></textarea>
                                         <br>
                                         <button type="button" class="btn btn-danger mb-3 pull-right">Reset</button>
                                     </div>
@@ -141,11 +141,8 @@
                             <div class="card-body">
                                 <div class="input-group">
                                     <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="file" accept=".xml">
-                                    <label class="custom-file-label" for="inputGroupFile04">Cargar Archivo</label>
-                                    </div>
-                                    <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" onclick="cargarArchivo()" type="button">Cargar</button>
+                                    <input type="file" class="custom-file-input" id="file-input" accept=".xml">
+                                    <label class="custom-file-label" for="inputGroupFile04"><h6 id="name-file" class="text-primary">Cargar Archivo</h6></label>
                                     </div>
                                 </div>
                             </div>
@@ -159,7 +156,29 @@
         <!-- main content area end -->
     </div>
     <!-- page container area end -->
-   
+    <script>
+        function leerArchivo(e) {
+        var archivo = e.target.files[0];
+        document.getElementById('name-file').innerHTML = e.target.files[0].name;
+        document.getElementById('contenido-archivo').innerHTML = "";
+        if (!archivo) {
+            return;
+        }
+        var lector = new FileReader();
+        lector.onload = function(e) {
+            var contenido = e.target.result;
+            mostrarContenido(contenido);
+        };
+        lector.readAsText(archivo);
+        }
+
+        function mostrarContenido(contenido) {
+        var elemento = document.getElementById('contenido-archivo');
+        elemento.innerHTML = contenido;
+        }
+
+        document.getElementById('file-input').addEventListener('change', leerArchivo, false);
+    </script>
     <!-- jquery latest version -->
     <script src="{% static 'assets/js/vendor/jquery-2.2.4.min.js' %} "></script>
     <!-- bootstrap 4 js -->
