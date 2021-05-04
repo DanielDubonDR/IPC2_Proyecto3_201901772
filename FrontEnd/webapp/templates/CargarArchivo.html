@@ -26,7 +26,7 @@
     <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js ' %} "></script>
 </head>
 
-<body>
+<body onload="CargarInfo()">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -184,7 +184,6 @@
             var contenido= document.querySelector('#contenido-archivo').value
             if(contenido!="")
             {
-
                 console.log(contenido)
                 fetch('http://localhost:4000/Archivo', {
                 method: 'POST',
@@ -209,6 +208,7 @@
                 alert('Llene todos los campos')
             }
         }
+        
         function VerInfo()
         {
             fetch(`http://localhost:4000/VerArchivo`)
@@ -220,7 +220,20 @@
             //console.log(res)
             document.querySelector('#salida').value = res
           })
-    }
+        }
+        /*
+        function CargarInfo()
+        {
+            fetch(`http://localhost:4000/VerArchivo`)
+            .then(response => response.text())
+          .catch(error => {
+            console.log(error)
+          })
+          .then(res =>{
+            //console.log(res)
+            document.querySelector('#contenido-archivo').value = res
+          })
+        }*/
     </script>
     <!-- jquery latest version -->
     <script src="{% static 'assets/js/vendor/jquery-2.2.4.min.js' %} "></script>

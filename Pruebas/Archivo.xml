@@ -1,5 +1,3 @@
-import re
-txt='''
 <EVENTOS>
 	<EVENTO>
 	Guatemala, 15/01/2021
@@ -40,10 +38,3 @@ txt='''
 	Error: 10001 - Excepción en pila
 	</EVENTO>
 </EVENTOS>
-'''
-
-expresion = r"[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*"
-a= re.findall(expresion, txt)
-for i in a:
-    print(i)
-
