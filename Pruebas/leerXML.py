@@ -42,8 +42,8 @@ txt='''
 </EVENTOS>
 '''
 
-expresion = r"[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*"
-a= re.findall(expresion, txt)
-for i in a:
-    print(i)
+#expresion correo= r"[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*"
+# <EVENTO>(.|\n)*?</EVENTO>
+a= re.findall(r"<EVENTO>(\n|.)*?</EVENTO>", txt)
+print(a)
 
