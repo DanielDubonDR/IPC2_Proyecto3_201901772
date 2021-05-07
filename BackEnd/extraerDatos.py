@@ -1,3 +1,4 @@
+import re
 class Analizar:
     def __init__(self):
        self.texto=""
@@ -15,6 +16,7 @@ class Analizar:
     def verEtiquetas(self):
         for i in self.etiquetas:
             print(i)
+            print("\n")
     
     def analizar(self):
         estado=0
@@ -195,6 +197,33 @@ class Analizar:
                     self.etiquetas.append(string)
                     estado=0
                     string=""
+    
+    def quitarEtiquetas(self):
+        for i in range(len(self.etiquetas)):
+            self.etiquetas[i]=self.etiquetas[i].replace("<EVENTO>", "")
+            self.etiquetas[i]=self.etiquetas[i].replace("</EVENTO>", "")
+            self.etiquetas[i]=self.etiquetas[i].lstrip().rstrip()
+    
+    def getDatos(self):
+        fecha=""
+        usuario=""
+        for i in self.etiquetas:
+            fechas=re.findall(r"\d\d/\d\d/\d\d\d\d", i)
+            fecha=fechas[0]
+            print(fecha)
+            print(self.getUsuario(i))
+    
+    def getUsuario(self,txt):
+        linea=""
+        lineas=txt.splitlines()
+        for i in lineas:
+            if "Reportado por:" in i:
+                linea=i
+                break
+        usuarios=re.findall(r"[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*", linea)
+        return usuarios[0]
+        
 
 prueba = Analizar()
-prueba.verEtiquetas()
+prueba.quitarEtiquetas()
+prueba.getDatos()
