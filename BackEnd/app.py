@@ -6,18 +6,24 @@ cors = CORS(app, resources={r"/*":{"origin":"*"}})
 
 @app.route('/Archivo', methods=['POST'])
 def RecibirArchivo():
-    txt = request.data.decode('utf-8')
-    archivo=open("Database/Archivo.xml", 'w', encoding='utf8')
-    archivo.write(txt)
-    archivo.close()
-    return jsonify({'message':'Se recibió el archivo'})
+    if request.method == 'POST':
+        txt = request.data.decode('utf-8')
+        archivo=open("Database/Archivo.xml", 'w', encoding='utf8')
+        archivo.write(txt)
+        archivo.close()
+        return jsonify({'Message':'Se recibió el archivo'})
+    else:
+        return jsonify({'Error':'No se admite esa petición'})
 
 @app.route('/VerArchivo', methods=['GET'])
 def MostrarArchivo():
-    archivo=open("DataBase/Archivo.xml",'r', encoding='utf8')
-    contenido=archivo.read()
-    archivo.close()
-    return(contenido)
+    if request.method == 'GET':
+        archivo=open("DataBase/Archivo.xml",'r', encoding='utf8')
+        contenido=archivo.read()
+        archivo.close()
+        return(contenido)
+    else:
+        return jsonify({'Error':'No se admite esa petición'})
 
 '''
 @app.route('/Archivo', methods=['POST'])

@@ -1,8 +1,11 @@
 import re
+from clases import Usuario, Afectado, Error
+
 class Analizar:
     def __init__(self):
        self.texto=""
        self.etiquetas=[]
+       self.usuarios=[]
        self.leerArchivo()
 
     def leerArchivo(self):
@@ -205,13 +208,43 @@ class Analizar:
             self.etiquetas[i]=self.etiquetas[i].lstrip().rstrip()
     
     def getDatos(self):
-        fecha=""
-        usuario=""
         for i in self.etiquetas:
             fechas=re.findall(r"\d\d/\d\d/\d\d\d\d", i)
             fecha=fechas[0]
             print(fecha)
             print(self.getUsuario(i))
+            self.insertarUsuario(fecha,self.getUsuario(i))
+    
+    def insertarUsuario(self, fecha, usuario):
+        if len(self.usuarios)==0:
+            self.usuarios.append(Usuario(fecha,usuario,1))
+        else:
+            if self.verificarExisteUsuario(fecha,usuario):
+                print("hola ")
+                id=self.getPoscionUsuario(fecha,usuario)
+                self.usuarios[id].cantidad+=1
+            else:
+                print("holass ")
+                self.usuarios.append(Usuario(fecha,usuario,1))
+
+    def verificarExisteUsuario(self,fecha, usuario):
+        encontrado=False
+        for i in self.usuarios:
+            if i.usuario==usuario and i.fecha==fecha:
+                encontrado=True
+        return encontrado
+    
+    def getPoscionUsuario(self, fecha, usuario):
+        cont=0
+        for i in self.usuarios:
+            if i.usuario==usuario and i.fecha==fecha:
+                return cont
+            else:
+                cont+=1
+    
+    def verUsuarios(self):
+        for i in self.usuarios:
+            print(i)
     
     def getUsuario(self,txt):
         linea=""
@@ -227,3 +260,4 @@ class Analizar:
 prueba = Analizar()
 prueba.quitarEtiquetas()
 prueba.getDatos()
+prueba.verUsuarios();
