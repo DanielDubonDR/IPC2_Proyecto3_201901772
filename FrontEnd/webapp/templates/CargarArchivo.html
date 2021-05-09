@@ -122,7 +122,8 @@
                                         <br>
                                         <textarea class="form-control" id="contenido-archivo" aria-label="With textarea" rows="11" placeholder="Entrada"></textarea>
                                         <br>
-                                        <button type="button" id="enviar" onclick="pushArchivo()" class="btn btn-success mb-3 pull-right">Enviar</button>
+                                        <button type="button" id="enviar" onclick="pushArchivo()" class="btn btn-success mb-3 pull-right ">Enviar</button>
+                                        <button type="button"  onclick="CargarInfo()" style="margin-right: 5px;" class="btn btn-secondary mb-3 pull-right ">Modificar</button>
                                     </div>
                                     <div class="col-md-6">
                                         <h6 class="text-primary">&nbsp;Salida</h6>
@@ -234,7 +235,7 @@
             //document.querySelector('#salida').value = res
           })
         }
-        /*
+        
         function CargarInfo()
         {
             fetch(`http://localhost:4000/VerArchivo`)
@@ -246,7 +247,7 @@
             //console.log(res)
             document.querySelector('#contenido-archivo').value = res
           })
-        }*/   
+        }   
     </script>
     <!-- jquery latest version -->
     <script src="{% static 'assets/js/vendor/jquery-2.2.4.min.js' %} "></script>
