@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/styles.css' %} ">
     <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %} ">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <!-- modernizr css -->
     <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js' %} "></script>
 </head>
@@ -36,42 +37,8 @@
     </div>
     <!-- preloader area end -->
     <!-- page container area start -->
-    <div class="page-container">
-        <!-- sidebar menu area start -->
-        <div class="sidebar-menu">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <a href="Inicio.html"><h2 class="text-center" style="font-family: Lobster, serif;" >Post-Rest</h2></a>
-                </div>
-            </div>
-            <div class="main-menu">
-                <div class="menu-inner">
-                    <nav>
-                        <ul class="metismenu" id="menu">
-                            <li class="active"><a href="Inicio.html"><i class="ti-receipt"></i> <span>Inicio</span></a></li>
-                            <li><a href="CargarArchivo.html"><i class="ti-receipt"></i> <span>Cargar Archivo</span></a></li>
-                            <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-pie-chart"></i><span>Peticiones</span></a>
-                                <ul class="collapse">
-                                    <li><a href="ConsultarDatos.html">Consultar datos</a></li>
-                                    <li><a href="Filtro1.html">Filtrar por fecha y usuario</a></li>
-                                    <li><a href="Filtro2.html">Filtrar por fecha y codigo</a></li>
-                                </ul>
-                            </li>
-                            
-                            <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layers-alt"></i> <span>Ayuda</span></a>
-                                <ul class="collapse">
-                                    <li><a href="Info.html">Información del estudiante</a></li>
-                                    <li><a href="Documentacion.html">Ver documentación</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <!-- sidebar menu area end -->
+    <div >
+        
         <!-- main content area start -->
         <div class="main-content">
             <!-- header area start -->
@@ -79,11 +46,6 @@
                 <div class="row align-items-center">
                     <!-- nav and search button -->
                     <div class="col-md-6 col-sm-8 clearfix">
-                        <div class="nav-btn pull-left">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
                        
                     </div>
                    
@@ -112,7 +74,12 @@
                 <br>
                 <div class="card">
                     <div class="card-body">
-                        <h1>Bienvenido...</h1>
+                        <br><br><br><br><br>
+                        <h1 class="text-primary" style="font-family: Lobster, serif; font-size: 50px;">Post-Rest</h1>
+                        <h1 style="font-family: 'Itim', cursive; font-size: 80px;">Bienvenido...</h1>
+                        <br><br>
+                        <button type="button" style="font-family: 'Itim', cursive; font-size: 20px;" onclick="location.href='/CargarArchivo.html'" class="btn btn-success mb-3">Cargar Archivo</button>
+                        <br><br><br><br><br><br><br><br>
                     </div>
                 </div>
                 
