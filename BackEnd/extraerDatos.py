@@ -346,13 +346,27 @@ class Analizar:
                     txt+="\n\t\t\t\t<EMAIL>"+j.usuario+"</EMAIL>"
                     txt+="\n\t\t\t\t<CANTIDAD_MENSAJES>"+str(j.cantidad)+"</CANTIDAD_MENSAJES>"
                     txt+="\n\t\t\t</USUARIO>"
-
             txt+="\n\t\t</REPORTADO_POR>"
+
+            txt+="\n\t\t<AFECTADOS>"
+            for j in self.afectados:
+                if j.fecha == i:
+                    txt+="\n\t\t\t<AFECTADO>"+j.afectado+"</AFECTADO>"
+            txt+="\n\t\t</AFECTADOS>"
+            
+            txt+="\n\t\t<ERRORES>"
+            for j in self.errores:
+                if j.fecha == i:
+                    txt+="\n\t\t\t<ERROR>"
+                    txt+="\n\t\t\t\t<CODIGO>"+j.error+"</CODIGO>"
+                    txt+="\n\t\t\t\t<CANTIDAD_MENSAJES>"+str(j.cantidad)+"</CANTIDAD_MENSAJES>"
+                    txt+="\n\t\t\t</ERROR>"
+            txt+="\n\t\t</ERRORES>"
 
             txt+="\n\t</ESTADISTICA>"
 
         txt+="\n</ESTADISTICAS>"
-        print(txt)
+        self.crearArchivo(txt)
 
     def obtenerMensajesFecha(self, fecha):
         cont=0
@@ -361,10 +375,15 @@ class Analizar:
                 cont+=i.cantidad
         return cont
 
+    def crearArchivo(self, texto):
+        archivo=open("Database/Estadisticas.xml", 'w', encoding='utf8')
+        archivo.write(texto)
+        archivo.close()
+
 prueba = Analizar()
-prueba.getDatos()
+# prueba.getDatos()
 # prueba.verUsuarios();
 # prueba.verFechas()
 # prueba.verAfectados()
 # prueba.verErrores()
-prueba.generarEstadisticas()
+# prueba.generarEstadisticas()

@@ -1,8 +1,14 @@
 from flask import Flask, jsonify, request, Response
 from flask_cors import CORS
+from extraerDatos import Analizar
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*":{"origin":"*"}})
+
+def generarDatos():
+    datos=Analizar()
+    datos.getDatos()
+    datos.generarEstadisticas()
 
 @app.route('/Archivo', methods=['POST', 'GET'])
 def RecibirArchivo():
@@ -11,6 +17,7 @@ def RecibirArchivo():
         archivo=open("Database/Archivo.xml", 'w', encoding='utf8')
         archivo.write(txt)
         archivo.close()
+        generarDatos()
         return jsonify({'Message':'Se recibió el archivo'})
     else:
         return jsonify({'Error':'No se admite esa petición'})
@@ -19,6 +26,16 @@ def RecibirArchivo():
 def MostrarArchivo():
     if request.method == 'GET':
         archivo=open("DataBase/Archivo.xml",'r', encoding='utf8')
+        contenido=archivo.read()
+        archivo.close()
+        return(contenido)
+    else:
+        return jsonify({'Error':'No se admite esa petición'})
+
+@app.route('/Estadisticas', methods=['GET', 'POST'])
+def MostrarEstadisticas():
+    if request.method == 'GET':
+        archivo=open("DataBase/Estadisticas.xml",'r', encoding='utf8')
         contenido=archivo.read()
         archivo.close()
         return(contenido)
