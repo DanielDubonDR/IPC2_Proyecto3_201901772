@@ -42,6 +42,19 @@ def MostrarEstadisticas():
     else:
         return jsonify({'Error':'No se admite esa petición'})
 
+@app.route('/reset', methods=['GET', 'POST'])
+def Resetear():
+    if request.method == 'GET':
+        archivo=open("Database/Archivo.xml", 'w', encoding='utf8')
+        archivo.write("")
+        archivo.close()
+        archivo2=open("Database/Estadisticas.xml", 'w', encoding='utf8')
+        archivo2.write("")
+        archivo2.close()
+        return jsonify({'Message':'Se eliminaron los datos'})
+    else:
+        return jsonify({'Error':'No se admite esa petición'})
+
 '''
 @app.route('/Archivo', methods=['POST'])
 def RecibirArchivo():
