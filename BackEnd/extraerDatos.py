@@ -211,6 +211,7 @@ class Analizar:
             self.etiquetas[i]=self.etiquetas[i].lstrip().rstrip()
     
     def getDatos(self):
+        self.quitarEtiquetas()
         for i in self.etiquetas:
             fechas=re.findall(r"\d\d/\d\d/\d\d\d\d", i)
             fecha=fechas[0]
@@ -331,12 +332,39 @@ class Analizar:
     def verErrores(self):
         for i in self.errores:
             print(i)
-        
+    
+    def generarEstadisticas(self):
+        txt="<ESTADISTICAS>"
+        for i in self.fechas:
+            txt+="\n\t<ESTADISTICA>"
+            txt+="\n\t\t<FECHA>"+i+"</FECHA>"
+            txt+="\n\t\t<CANTIDAD_MENSAJES>"+str(self.obtenerMensajesFecha(i))+"</CANTIDAD_MENSAJES>"
+            txt+="\n\t\t<REPORTADO_POR>"
+            for j in self.usuarios:
+                if j.fecha == i:
+                    txt+="\n\t\t\t<USUARIO>"
+                    txt+="\n\t\t\t\t<EMAIL>"+j.usuario+"</EMAIL>"
+                    txt+="\n\t\t\t\t<CANTIDAD_MENSAJES>"+str(j.cantidad)+"</CANTIDAD_MENSAJES>"
+                    txt+="\n\t\t\t</USUARIO>"
+
+            txt+="\n\t\t</REPORTADO_POR>"
+
+            txt+="\n\t</ESTADISTICA>"
+
+        txt+="\n</ESTADISTICAS>"
+        print(txt)
+
+    def obtenerMensajesFecha(self, fecha):
+        cont=0
+        for i in self.usuarios:
+            if i.fecha==fecha:
+                cont+=i.cantidad
+        return cont
 
 prueba = Analizar()
-prueba.quitarEtiquetas()
 prueba.getDatos()
-prueba.verUsuarios();
-prueba.verFechas()
-prueba.verAfectados()
-prueba.verErrores()
+# prueba.verUsuarios();
+# prueba.verFechas()
+# prueba.verAfectados()
+# prueba.verErrores()
+prueba.generarEstadisticas()

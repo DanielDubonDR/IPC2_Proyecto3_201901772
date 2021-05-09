@@ -4,7 +4,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*":{"origin":"*"}})
 
-@app.route('/Archivo', methods=['POST'])
+@app.route('/Archivo', methods=['POST', 'GET'])
 def RecibirArchivo():
     if request.method == 'POST':
         txt = request.data.decode('utf-8')
@@ -15,7 +15,7 @@ def RecibirArchivo():
     else:
         return jsonify({'Error':'No se admite esa petición'})
 
-@app.route('/VerArchivo', methods=['GET'])
+@app.route('/VerArchivo', methods=['GET', 'POST'])
 def MostrarArchivo():
     if request.method == 'GET':
         archivo=open("DataBase/Archivo.xml",'r', encoding='utf8')
