@@ -6,6 +6,9 @@ class Analizar:
        self.texto=""
        self.etiquetas=[]
        self.usuarios=[]
+       self.fechas=[]
+       self.afectados=[]
+       self.errores=[]
        self.leerArchivo()
 
     def leerArchivo(self):
@@ -211,21 +214,60 @@ class Analizar:
         for i in self.etiquetas:
             fechas=re.findall(r"\d\d/\d\d/\d\d\d\d", i)
             fecha=fechas[0]
-            print(fecha)
-            print(self.getUsuario(i))
+            self.insertarFecha(fecha)
+            #print(fecha)
+            #print(self.getUsuario(i))
             self.insertarUsuario(fecha,self.getUsuario(i))
+            self.insertarAfectado(fecha,self.getAfectados(i))
+            self.insertarError(fecha,self.getError(i))
     
     def insertarUsuario(self, fecha, usuario):
         if len(self.usuarios)==0:
             self.usuarios.append(Usuario(fecha,usuario,1))
         else:
             if self.verificarExisteUsuario(fecha,usuario):
-                print("hola ")
                 id=self.getPoscionUsuario(fecha,usuario)
                 self.usuarios[id].cantidad+=1
             else:
-                print("holass ")
                 self.usuarios.append(Usuario(fecha,usuario,1))
+
+    def insertarError(self, fecha, error):
+        if len(self.usuarios)==0:
+            self.errores.append(Error(fecha,error,1))
+        else:
+            if self.verificarExisteError(fecha,error):
+                id=self.getPoscionError(fecha,error)
+                self.errores[id].cantidad+=1
+            else:
+                self.errores.append(Error(fecha,error,1))
+
+    def insertarAfectado(self, fecha, afectado):
+        for i in afectado:
+            if self.verificarExisteAfectado(fecha,i)==False:
+                self.afectados.append(Afectado(fecha,i))
+    
+    def verificarExisteAfectado(self,fecha, afectado):
+        encontrado=False
+        for i in self.afectados:
+            if i.afectado==afectado and i.fecha==fecha:
+                encontrado=True
+        return encontrado
+
+    def verificarExisteError(self,fecha, error):
+        encontrado=False
+        for i in self.errores:
+            if i.error==error and i.fecha==fecha:
+                encontrado=True
+        return encontrado
+    
+    def insertarFecha(self, fecha):
+        if len(self.fechas)==0:
+            self.fechas.append(fecha)
+        else:
+            if fecha in self.fechas:
+                print()
+            else:
+                self.fechas.append(fecha)
 
     def verificarExisteUsuario(self,fecha, usuario):
         encontrado=False
@@ -241,6 +283,14 @@ class Analizar:
                 return cont
             else:
                 cont+=1
+
+    def getPoscionError(self, fecha, error):
+        cont=0
+        for i in self.errores:
+            if i.error==error and i.fecha==fecha:
+                return cont
+            else:
+                cont+=1
     
     def verUsuarios(self):
         for i in self.usuarios:
@@ -250,14 +300,43 @@ class Analizar:
         linea=""
         lineas=txt.splitlines()
         for i in lineas:
-            if "Reportado por:" in i:
+            if "Reportado por" in i:
                 linea=i
                 break
         usuarios=re.findall(r"[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*", linea)
         return usuarios[0]
+
+    def getError(self,txt):
+        usuarios=re.findall(r"\d\d\d\d\d", txt)
+        return usuarios[0]
+
+    def getAfectados(self,txt):
+        linea=""
+        lineas=txt.splitlines()
+        for i in lineas:
+            if "Usuarios afectados" in i:
+                linea=i
+                break
+        usuarios=re.findall(r"[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*", linea)
+        return usuarios
+
+    def verFechas(self):
+        for i in self.fechas:
+            print(i)
+    
+    def verAfectados(self):
+        for i in self.afectados:
+            print(i)
+    
+    def verErrores(self):
+        for i in self.errores:
+            print(i)
         
 
 prueba = Analizar()
 prueba.quitarEtiquetas()
 prueba.getDatos()
 prueba.verUsuarios();
+prueba.verFechas()
+prueba.verAfectados()
+prueba.verErrores()
