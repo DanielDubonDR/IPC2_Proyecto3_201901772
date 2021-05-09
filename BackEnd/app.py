@@ -52,10 +52,24 @@ def fl():
         Usuarios=datos.getUsers()
         for i in Usuarios:
             if i.fecha==fecha:
-                Dato={'country': i.usuario, 'lifeExpectancy': i.cantidad }
+                Dato={'usuario': i.usuario, 'cantidad': i.cantidad }
                 Datos.append(Dato)
         return jsonify(Datos)
         # return jsonify({"country": "Daniel", "lifeExpectancy": 84 }, {"country": "Reinald", "lifeExpectancy": 100 },{"country": "Funciona", "lifeExpectancy": 85 })
+    else:
+        return jsonify({'Error':'No se admite esa petición'})
+
+@app.route('/Fechas', methods=['GET', 'POST'])
+def Fechas():
+    if request.method == 'GET':
+        Datos=[]
+        datos=Analizar()
+        datos.getDatos()
+        Usuarios=datos.getDates()
+        for i in Usuarios:
+            Dato={'fecha': i }
+            Datos.append(Dato)
+        return jsonify(Datos)
     else:
         return jsonify({'Error':'No se admite esa petición'})
 
