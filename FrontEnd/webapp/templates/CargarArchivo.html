@@ -225,8 +225,9 @@
         }
         function reset()
         {
-            fetch(`http://localhost:4000/reset`)
-            .then(response => response.text())
+            fetch(`http://localhost:4000/reset`, {
+        method: 'DELETE',
+        }).then(response => response.json())
           .catch(error => {
             console.log(error)
           })

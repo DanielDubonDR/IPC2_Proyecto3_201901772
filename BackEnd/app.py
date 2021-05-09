@@ -13,12 +13,15 @@ def generarDatos():
 @app.route('/Archivo', methods=['POST', 'GET'])
 def RecibirArchivo():
     if request.method == 'POST':
-        txt = request.data.decode('utf-8')
-        archivo=open("Database/Archivo.xml", 'w', encoding='utf8')
-        archivo.write(txt)
-        archivo.close()
-        generarDatos()
-        return jsonify({'Message':'Se recibió el archivo'})
+        try:
+            txt = request.data.decode('utf-8')
+            archivo=open("Database/Archivo.xml", 'w', encoding='utf8')
+            archivo.write(txt)
+            archivo.close()
+            generarDatos()
+            return jsonify({'Message':'Se recibió el archivo'})
+        except:
+            return jsonify({'Error':'Ocurrio un error al analizar el archivo, verifque su estructura'})
     else:
         return jsonify({'Error':'No se admite esa petición'})
 
@@ -73,9 +76,9 @@ def Fechas():
     else:
         return jsonify({'Error':'No se admite esa petición'})
 
-@app.route('/reset', methods=['GET', 'POST'])
+@app.route('/reset', methods=['GET', 'POST', 'DELETE'])
 def Resetear():
-    if request.method == 'GET':
+    if request.method == 'DELETE':
         archivo=open("Database/Archivo.xml", 'w', encoding='utf8')
         archivo.write("")
         archivo.close()

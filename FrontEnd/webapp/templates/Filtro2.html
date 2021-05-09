@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="{% static 'assets/css/metisMenu.css' %} ">
     <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %} ">
     <link rel="stylesheet" href="{% static 'assets/css/slicknav.min.css' %} ">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@1&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+
     <!-- amchart css -->
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
     <!-- others css -->
@@ -26,7 +30,7 @@
     <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js ' %} "></script>
 </head>
 
-<body>
+<body onload="llenar()">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -86,6 +90,7 @@
                         </div>
                        
                     </div>
+                    <h6 class="page-title text-center" style="font-family: Lobster, serif;" >Post-Rest</h6>
                    
                 </div>
             </div>
@@ -95,10 +100,10 @@
                 <div class="row align-items-center">
                     <div class="col-sm-6">
                         <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Inicio</h4>
+                            <h4 class="page-title pull-left">Peticiones</h4>
                             <ul class="breadcrumbs pull-left">
-                                <li><a href="index.html">Home</a></li>
-                                <li><span>Inicio</span></li>
+                                <li><a href="index.html">Peticiones</a></li>
+                                <li><span>Filtrar por fecha y código de error</span></li>
                             </ul>
                         </div>
                     </div>
@@ -112,8 +117,14 @@
                 <br>
                 <div class="card">
                     <div class="card-body">
-                        <h1>Filtro2</h1>
+                        <h2 class="text-primary" style="font-family: 'IBM Plex Mono', monospace; font-size: 24px;">FILTRAR POR FECHA Y CÓDIGO DE ERROR</h2>
+                        <br>
+                        <select class="browser-default custom-select" onChange="dt1()" id="usuario" required
+                            aria-label="Seleccione un juego">
+                            <option selected>Seleccionar una fecha</option>
+                        </select>
                     </div>
+                    <canvas id="canvas" height="350"></canvas>
                 </div>
                 
             </div>
@@ -121,7 +132,93 @@
         <!-- main content area end -->
     </div>
     <!-- page container area end -->
-   
+    <script>
+        var dt1;
+
+        function dt1() {
+            var fecha = document.querySelector('#usuario').value;
+            var objeto = {
+                'fecha': fecha
+            }
+            console.log(objeto)
+            //Aplicamos nuestro metodo magico con sus 3 metodos, then, catch, then
+            fetch('http://localhost:4000/filtro1', {
+                    method: 'POST',
+                    body: JSON.stringify(objeto),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(res => res.json())
+                .catch(error => {
+                    console.error('Error:', error)
+                    alert("Ocurrio un error al consumir la API, revise la consola")
+                    val = false
+                })
+                .then(response => {
+                    console.log('Success:', response);
+                    renderChart(response);
+                })
+        }
+
+        function llenar() {
+            fetch(`http://localhost:4000/Fechas`)
+                .then(response => response.json())
+                .catch(error => {
+                    console.log(error)
+                })
+                .then(res => {
+                    console.log(res)
+                    var $select = $('#usuario');
+                    $(document).ready(function () {
+                        //alert(options);
+                        $.each(res, function (id, name) {
+                            $select.append('<option value=' + name.fecha + '>' + name.fecha +
+                                '</option>');
+                        });
+                    });
+                })
+        }
+
+
+
+
+        function renderChart(dataset) {
+            let ctx = document.getElementById('canvas')
+            let barChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: dataset.map((el) => el.usuario),
+                    datasets: [{
+                        label: 'Mensajes recibidos',
+                        backgroundColor: [
+                            'rgb(66, 134, 244,0.5)',
+                            'rgb(74, 135, 72,0.5)',
+                            'rgb(209, 99, 36,0.5)',
+                            'rgb(157, 168, 52,0.5)',
+                            'rgb(53, 171, 94,0.5)',
+                            'rgb(62, 172, 173,0.5)',
+                            'rgb(54, 123, 168,0.5)',
+                            'rgb(168, 54, 153,0.5)',
+                            'rgb(201, 48, 99,0.5)',
+                            'rgb(252, 186, 3,0.5)',
+                            'rgb(229, 89, 50,0.5)'
+                        ],
+                        borderColor: 'rgba(128,164,237, 1)',
+                        data: dataset.map((el) => el.cantidad)
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            })
+        }
+    </script>
     <!-- jquery latest version -->
     <script src="{% static 'assets/js/vendor/jquery-2.2.4.min.js' %} "></script>
     <!-- bootstrap 4 js -->
