@@ -5,9 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Filtro 1</title>
+    <title>Peticiones</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="{% static 'assets/images/icon/favicon.ico' %} ">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %} ">
     <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %} ">
     <link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %} ">
@@ -15,7 +16,8 @@
     <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %} ">
     <link rel="stylesheet" href="{% static 'assets/css/slicknav.min.css' %} ">
     <!-- amchart css -->
-    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css"
+        media="all" />
     <!-- others css -->
     <link rel="stylesheet" href="{% static 'assets/css/typography.css' %} ">
     <link rel="stylesheet" href="{% static 'assets/css/default-css.css' %} ">
@@ -41,26 +43,31 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="Inicio.html"><h2 class="text-center" style="font-family: Lobster, serif;" >Post-Rest</h2></a>
+                    <a href="Inicio.html">
+                        <h2 class="text-center" style="font-family: Lobster, serif;">Post-Rest</h2>
+                    </a>
                 </div>
             </div>
             <div class="main-menu">
                 <div class="menu-inner">
                     <nav>
                         <ul class="metismenu" id="menu">
-                            <li ><a href="Inicio.html"><i class="ti-receipt"></i> <span>Inicio</span></a></li>
-                            <li><a href="CargarArchivo.html"><i class="ti-receipt"></i> <span>Cargar Archivo</span></a></li>
+                            <li><a href="Inicio.html"><i class="ti-receipt"></i> <span>Inicio</span></a></li>
+                            <li><a href="CargarArchivo.html"><i class="ti-receipt"></i> <span>Cargar Archivo</span></a>
+                            </li>
                             <li class="active">
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-pie-chart"></i><span>Peticiones</span></a>
+                                <a href="javascript:void(0)" aria-expanded="true"><i
+                                        class="ti-pie-chart"></i><span>Peticiones</span></a>
                                 <ul class="collapse">
-                                    <li ><a href="ConsultarDatos.html">Consultar datos</a></li>
+                                    <li><a href="ConsultarDatos.html">Consultar datos</a></li>
                                     <li class="active"><a href="Filtro1.html">Filtrar por fecha y usuario</a></li>
                                     <li><a href="Filtro2.html">Filtrar por fecha y codigo</a></li>
                                 </ul>
                             </li>
-                            
+
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layers-alt"></i> <span>Ayuda</span></a>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layers-alt"></i>
+                                    <span>Ayuda</span></a>
                                 <ul class="collapse">
                                     <li><a href="Info.html">Información del estudiante</a></li>
                                     <li><a href="Documentacion.html">Ver documentación</a></li>
@@ -84,9 +91,9 @@
                             <span></span>
                             <span></span>
                         </div>
-                       
+
                     </div>
-                   
+
                 </div>
             </div>
             <!-- header area end -->
@@ -95,10 +102,10 @@
                 <div class="row align-items-center">
                     <div class="col-sm-6">
                         <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Inicio</h4>
+                            <h4 class="page-title pull-left">Peticiones</h4>
                             <ul class="breadcrumbs pull-left">
-                                <li><a href="index.html">Home</a></li>
-                                <li><span>Inicio</span></li>
+                                <li><a href="index.html">Peticiones</a></li>
+                                <li><span>Filtrar por fecha y usuario/span></li>
                             </ul>
                         </div>
                     </div>
@@ -113,15 +120,64 @@
                 <div class="card">
                     <div class="card-body">
                         <h1>Filtro1</h1>
+                        <button type="button" onclick="dt1()" style="margin-right: 5px;"
+                            class="btn btn-secondary mb-3 pull-right ">Modificar</button>
+                        <input class="form-control" type="text" placeholder="Ingresar Fecha" id="fecha">
                     </div>
+                    <canvas id="canvas" width="400" height="200"></canvas>
                 </div>
-                
             </div>
+
         </div>
-        <!-- main content area end -->
+    </div>
+    <!-- main content area end -->
     </div>
     <!-- page container area end -->
-   
+    <script>
+        var dt1;
+
+        function dt1() {
+            var fecha = document.querySelector('#fecha').value;
+            var objeto = {
+                'fecha': fecha
+            }
+            console.log(objeto)
+            //Aplicamos nuestro metodo magico con sus 3 metodos, then, catch, then
+            fetch('http://localhost:4000/filtro1', {
+                method: 'POST',
+                body: JSON.stringify(objeto),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => res.json())
+                .catch(error => {
+                    console.error('Error:', error)
+                    alert("Ocurrio un error al consumir la API, revise la consola")
+                    val = false
+                })
+                .then(response => {
+                    console.log('Success:', response);
+                    renderChart(response);
+                })
+        }
+        
+
+        function renderChart(dataset) {
+            let ctx = document.getElementById('canvas')
+            let barChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: dataset.map((el) => el.country),
+                    datasets: [{
+                        label: 'life expectancy (years)',
+                        backgroundColor: 'rgba(128,164,237, 0.8)',
+                        borderColor: 'rgba(128,164,237, 1)',
+                        data: dataset.map((el) => el.lifeExpectancy)
+                    }]
+                }
+            })
+        }
+    </script>
     <!-- jquery latest version -->
     <script src="{% static 'assets/js/vendor/jquery-2.2.4.min.js' %} "></script>
     <!-- bootstrap 4 js -->
@@ -139,8 +195,8 @@
     <!-- start zingchart js -->
     <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
     <script>
-    zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
-    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+        zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
     </script>
     <!-- others plugins -->
     <script src="{% static 'assets/js/plugins.js' %} "></script>

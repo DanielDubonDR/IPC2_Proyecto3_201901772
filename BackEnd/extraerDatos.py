@@ -379,8 +379,17 @@ class Analizar:
         archivo=open("Database/Estadisticas.xml", 'w', encoding='utf8')
         archivo.write(texto)
         archivo.close()
+    
+    def getUsers(self):
+        return self.usuarios
 
-prueba = Analizar()
+    def getDates(self):
+        return self.fechas
+    
+    def getBugs(self):
+        return self.errores
+
+# prueba = Analizar()
 # prueba.getDatos()
 # prueba.verUsuarios();
 # prueba.verFechas()

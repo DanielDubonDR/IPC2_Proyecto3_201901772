@@ -42,6 +42,23 @@ def MostrarEstadisticas():
     else:
         return jsonify({'Error':'No se admite esa petición'})
 
+@app.route('/filtro1', methods=['GET', 'POST'])
+def fl():
+    if request.method == 'POST':
+        fecha=request.json['fecha']
+        Datos=[]
+        datos=Analizar()
+        datos.getDatos()
+        Usuarios=datos.getUsers()
+        for i in Usuarios:
+            if i.fecha==fecha:
+                Dato={'country': i.usuario, 'lifeExpectancy': i.cantidad }
+                Datos.append(Dato)
+        return jsonify(Datos)
+        # return jsonify({"country": "Daniel", "lifeExpectancy": 84 }, {"country": "Reinald", "lifeExpectancy": 100 },{"country": "Funciona", "lifeExpectancy": 85 })
+    else:
+        return jsonify({'Error':'No se admite esa petición'})
+
 @app.route('/reset', methods=['GET', 'POST'])
 def Resetear():
     if request.method == 'GET':
