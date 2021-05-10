@@ -29,10 +29,10 @@ def reset(request):
         print('F')
     return render(request, 'login.html', contexto)
 
-def enviararchivo(request):
+def enviarArchivo(request):
     contexto={'content':'', 'response':''}
     if request.method == 'POST':
-        form = Entrada(request.POST, request.FILES)
+        form = (request.POST, request.FILES)
         if form.is_valid():
             filename = request.FILES['file']
             ruta = filename.name
@@ -50,7 +50,7 @@ def enviararchivo(request):
 def filtro1(request):
     contexto={'content':'', 'response':''}
     if request.method == 'POST':
-        form = Entrada(request.POST, request.FILES)
+        form = (request.POST, request.FILES)
         if form.is_valid():
             
             contenido = form
@@ -66,7 +66,7 @@ def filtro1(request):
 def filtro2(request):
     contexto={'content':'', 'response':''}
     if request.method == 'POST':
-        form = Entrada(request.POST, request.FILES)
+        form = (request.POST, request.FILES)
         if form.is_valid():
             contenido = form
             response = requests.post(endpoint+'filtro2', data=contenido)
