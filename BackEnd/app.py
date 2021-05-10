@@ -62,6 +62,23 @@ def fl():
     else:
         return jsonify({'Error':'No se admite esa petición'})
 
+@app.route('/filtro2', methods=['GET', 'POST'])
+def fl2():
+    if request.method == 'POST':
+        error=request.json['error']
+        Datos=[]
+        datos=Analizar()
+        datos.getDatos()
+        Errores=datos.getBugs()
+        for i in Errores:
+            if i.error==error:
+                Dato={'error': i.fecha, 'cantidad': i.cantidad }
+                Datos.append(Dato)
+        return jsonify(Datos)
+        # return jsonify({"country": "Daniel", "lifeExpectancy": 84 }, {"country": "Reinald", "lifeExpectancy": 100 },{"country": "Funciona", "lifeExpectancy": 85 })
+    else:
+        return jsonify({'Error':'No se admite esa petición'})
+
 @app.route('/Fechas', methods=['GET', 'POST'])
 def Fechas():
     if request.method == 'GET':
@@ -71,6 +88,20 @@ def Fechas():
         Usuarios=datos.getDates()
         for i in Usuarios:
             Dato={'fecha': i }
+            Datos.append(Dato)
+        return jsonify(Datos)
+    else:
+        return jsonify({'Error':'No se admite esa petición'})
+
+@app.route('/Errores', methods=['GET', 'POST'])
+def Errores():
+    if request.method == 'GET':
+        Datos=[]
+        datos=Analizar()
+        datos.getDatos()
+        erroress=datos.getCodigos()
+        for i in erroress:
+            Dato={'fecha': i}
             Datos.append(Dato)
         return jsonify(Datos)
     else:

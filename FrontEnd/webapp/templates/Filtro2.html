@@ -121,7 +121,7 @@
                         <br>
                         <select class="browser-default custom-select" onChange="dt1()" id="usuario" required
                             aria-label="Seleccione un juego">
-                            <option selected>Seleccionar una fecha</option>
+                            <option selected>Seleccionar código de error</option>
                         </select>
                     </div>
                     <canvas id="canvas" height="350"></canvas>
@@ -136,13 +136,13 @@
         var dt1;
 
         function dt1() {
-            var fecha = document.querySelector('#usuario').value;
+            var error = document.querySelector('#usuario').value;
             var objeto = {
-                'fecha': fecha
+                'error': error
             }
             console.log(objeto)
             //Aplicamos nuestro metodo magico con sus 3 metodos, then, catch, then
-            fetch('http://localhost:4000/filtro1', {
+            fetch('http://localhost:4000/filtro2', {
                     method: 'POST',
                     body: JSON.stringify(objeto),
                     headers: {
@@ -161,7 +161,7 @@
         }
 
         function llenar() {
-            fetch(`http://localhost:4000/Fechas`)
+            fetch(`http://localhost:4000/Errores`)
                 .then(response => response.json())
                 .catch(error => {
                     console.log(error)
@@ -187,9 +187,9 @@
             let barChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: dataset.map((el) => el.usuario),
+                    labels: dataset.map((el) => el.error),
                     datasets: [{
-                        label: 'Mensajes recibidos',
+                        label: 'Errores reportados',
                         backgroundColor: [
                             'rgb(66, 134, 244,0.5)',
                             'rgb(74, 135, 72,0.5)',

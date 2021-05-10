@@ -9,6 +9,7 @@ class Analizar:
        self.fechas=[]
        self.afectados=[]
        self.errores=[]
+       self.codigos=[]
        self.leerArchivo()
 
     def leerArchivo(self):
@@ -309,6 +310,10 @@ class Analizar:
 
     def getError(self,txt):
         usuarios=re.findall(r"\d\d\d\d\d", txt)
+        if usuarios[0] in self.codigos:
+            print()
+        else:
+            self.codigos.append(usuarios[0])
         return usuarios[0]
 
     def getAfectados(self,txt):
@@ -388,6 +393,9 @@ class Analizar:
     
     def getBugs(self):
         return self.errores
+
+    def getCodigos(self):
+        return self.codigos
 
 # prueba = Analizar()
 # prueba.getDatos()
