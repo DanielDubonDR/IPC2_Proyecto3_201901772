@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EVENTOS>
+    <EVENTO>
+        Costa Rica, 30/11/2019
+        Reportado por: ("Nombre" moe@ing.usac.edu.gt)
+        Usuarios afectados: barni@ing.usac.edu.gt, (milhouse@ing.usac.edu.gt), carl092@ing.usac.edu.gt, (ned@ing.usac.edu.gt), (bart@ing.usac.edu.gt), (lisa@ing.usac.edu.gt), ("Nombre" barni@ing.usac.edu.gt)
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        Mexico, 20/04/2021
+        Reportado por: (bart@ing.usac.edu.gt)
+        Usuarios afectados: (barni@ing.usac.edu.gt), carl092@ing.usac.edu.gt, ("Nombre" bart@ing.usac.edu.gt), ned@ing.usac.edu.gt, (milhouse@ing.usac.edu.gt), lisa@ing.usac.edu.gt
+        Error: 20003 - Sobrecarga de informacion
+    </EVENTO>
+    <EVENTO>
+        USA, 09/08/2019
+        Reportado por: ("Nombre" carl092@ing.usac.edu.gt)
+        Usuarios afectados: ("Nombre" homero@ing.usac.edu.gt), barni@ing.usac.edu.gt, ("Nombre" nelson@ing.usac.edu.gt), apu@ing.usac.edu.gt, ("Nombre" edna@ing.usac.edu.gt), ("Nombre" mrburns@ing.usac.edu.gt), ("Nombre" ned@ing.usac.edu.gt)
+        Error: 20005 - Medios equivocados
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 09/08/2019
+        Reportado por: (ned@ing.usac.edu.gt)
+        Usuarios afectados: nelson@ing.usac.edu.gt, (bart@ing.usac.edu.gt), ned@ing.usac.edu.gt
+        Error: 20008 - Lugar equivocado
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 15/04/2020
+        Reportado por: (moe@ing.usac.edu.gt)
+        Usuarios afectados: moe@ing.usac.edu.gt, barni@ing.usac.edu.gt, ("Nombre" lisa@ing.usac.edu.gt)
+        Error: 20004 - Demasiados registros enviados
+    </EVENTO>
+    <EVENTO>
+        USA, 01/06/2020
+        Reportado por: (barni@ing.usac.edu.gt)
+        Usuarios afectados: ("Nombre" barni@ing.usac.edu.gt), ("Nombre" ned@ing.usac.edu.gt)
+        Error: 20003 - Sobrecarga de informacion
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 16/12/2020
+        Reportado por: milhouse@ing.usac.edu.gt
+        Usuarios afectados: ("Nombre" carl092@ing.usac.edu.gt), apu@ing.usac.edu.gt, mrburns@ing.usac.edu.gt, (edna@ing.usac.edu.gt), ("Nombre" edna@ing.usac.edu.gt)
+        Error: 20007 - Error de servidor
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 20/04/2021
+        Reportado por: ("Nombre" homero@ing.usac.edu.gt)
+        Usuarios afectados: (edna@ing.usac.edu.gt), (milhouse@ing.usac.edu.gt), ("Nombre" mrburns@ing.usac.edu.gt), barni@ing.usac.edu.gt, ("Nombre" lisa@ing.usac.edu.gt), carl092@ing.usac.edu.gt
+        Error: 20004 - Demasiados registros enviados
+    </EVENTO>
+    <EVENTO>
+        Mexico, 09/08/2019
+        Reportado por: apu@ing.usac.edu.gt
+        Usuarios afectados: carl092@ing.usac.edu.gt, (lisa@ing.usac.edu.gt), lisa@ing.usac.edu.gt, (Ralph321@ing.usac.edu.gt)
+        Error: 20005 - Medios equivocados
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 15/04/2020
+        Reportado por: ("Nombre" homero@ing.usac.edu.gt)
+        Usuarios afectados: ("Nombre" nelson@ing.usac.edu.gt), (barni@ing.usac.edu.gt), nelson@ing.usac.edu.gt, (mrburns@ing.usac.edu.gt)
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 21/06/2020
+        Reportado por: ("Nombre" nelson@ing.usac.edu.gt)
+        Usuarios afectados: nelson@ing.usac.edu.gt, ("Nombre" Ralph321@ing.usac.edu.gt), (apu@ing.usac.edu.gt), (mrburns@ing.usac.edu.gt)
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        USA, 01/06/2020
+        Reportado por: ("Nombre" bart@ing.usac.edu.gt)
+        Usuarios afectados: ("Nombre" edna@ing.usac.edu.gt), (ned@ing.usac.edu.gt), (nelson@ing.usac.edu.gt)
+        Error: 20004 - Demasiados registros enviados
+    </EVENTO>
+    <EVENTO>
+        Panama, 01/06/2020
+        Reportado por: (Ralph321@ing.usac.edu.gt)
+        Usuarios afectados: mrburns@ing.usac.edu.gt, ("Nombre" carl092@ing.usac.edu.gt), lisa@ing.usac.edu.gt, ("Nombre" moe@ing.usac.edu.gt), mrburns@ing.usac.edu.gt, (carl092@ing.usac.edu.gt)
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 21/06/2020
+        Reportado por: ("Nombre" barni@ing.usac.edu.gt)
+        Usuarios afectados: ("Nombre" nelson@ing.usac.edu.gt), ("Nombre" homero@ing.usac.edu.gt)
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        USA, 16/12/2020
+        Reportado por: edna@ing.usac.edu.gt
+        Usuarios afectados: apu@ing.usac.edu.gt, (milhouse@ing.usac.edu.gt), Ralph321@ing.usac.edu.gt, ("Nombre" nelson@ing.usac.edu.gt), homero@ing.usac.edu.gt
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        Mexico, 16/12/2020
+        Reportado por: ("Nombre" homero@ing.usac.edu.gt)
+        Usuarios afectados: ("Nombre" Ralph321@ing.usac.edu.gt), ("Nombre" Ralph321@ing.usac.edu.gt)
+        Error: 20004 - Demasiados registros enviados
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 23/09/2019
+        Reportado por: ("Nombre" Ralph321@ing.usac.edu.gt)
+        Usuarios afectados: (edna@ing.usac.edu.gt), ned@ing.usac.edu.gt, apu@ing.usac.edu.gt, (ned@ing.usac.edu.gt), ("Nombre" barni@ing.usac.edu.gt), ("Nombre" ned@ing.usac.edu.gt)
+        Error: 20007 - Error de servidor
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 11/02/2021
+        Reportado por: ("Nombre" milhouse@ing.usac.edu.gt)
+        Usuarios afectados: (nelson@ing.usac.edu.gt), moe@ing.usac.edu.gt, (apu@ing.usac.edu.gt), (ned@ing.usac.edu.gt), ("Nombre" Ralph321@ing.usac.edu.gt), ("Nombre" mrburns@ing.usac.edu.gt), ("Nombre" lisa@ing.usac.edu.gt)
+        Error: 20007 - Error de servidor
+    </EVENTO>
+    <EVENTO>
+        Mexico, 21/06/2020
+        Reportado por: ned@ing.usac.edu.gt
+        Usuarios afectados: milhouse@ing.usac.edu.gt, barni@ing.usac.edu.gt, (apu@ing.usac.edu.gt)
+        Error: 20005 - Medios equivocados
+    </EVENTO>
+    <EVENTO>
+        Panama, 15/04/2020
+        Reportado por: ("Nombre" mrburns@ing.usac.edu.gt)
+        Usuarios afectados: Ralph321@ing.usac.edu.gt, (barni@ing.usac.edu.gt), (carl092@ing.usac.edu.gt), ("Nombre" carl092@ing.usac.edu.gt), ("Nombre" mrburns@ing.usac.edu.gt), (carl092@ing.usac.edu.gt), (mrburns@ing.usac.edu.gt), edna@ing.usac.edu.gt
+        Error: 20007 - Error de servidor
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 09/08/2019
+        Reportado por: ("Nombre" apu@ing.usac.edu.gt)
+        Usuarios afectados: (moe@ing.usac.edu.gt), milhouse@ing.usac.edu.gt
+        Error: 20004 - Demasiados registros enviados
+    </EVENTO>
+    <EVENTO>
+        Mexico, 01/06/2020
+        Reportado por: ("Nombre" mrburns@ing.usac.edu.gt)
+        Usuarios afectados: bart@ing.usac.edu.gt, ("Nombre" barni@ing.usac.edu.gt), ("Nombre" lisa@ing.usac.edu.gt), bart@ing.usac.edu.gt, ("Nombre" nelson@ing.usac.edu.gt), ("Nombre" apu@ing.usac.edu.gt)
+        Error: 20003 - Sobrecarga de informacion
+    </EVENTO>
+    <EVENTO>
+        Mexico, 15/04/2020
+        Reportado por: ("Nombre" moe@ing.usac.edu.gt)
+        Usuarios afectados: carl092@ing.usac.edu.gt, moe@ing.usac.edu.gt, (moe@ing.usac.edu.gt), (homero@ing.usac.edu.gt), lisa@ing.usac.edu.gt, ("Nombre" apu@ing.usac.edu.gt)
+        Error: 20005 - Medios equivocados
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 09/08/2019
+        Reportado por: milhouse@ing.usac.edu.gt
+        Usuarios afectados: ("Nombre" nelson@ing.usac.edu.gt), lisa@ing.usac.edu.gt, lisa@ing.usac.edu.gt, bart@ing.usac.edu.gt, (carl092@ing.usac.edu.gt)
+        Error: 20004 - Demasiados registros enviados
+    </EVENTO>
+    <EVENTO>
+        Mexico, 30/11/2019
+        Reportado por: apu@ing.usac.edu.gt
+        Usuarios afectados: edna@ing.usac.edu.gt, ("Nombre" carl092@ing.usac.edu.gt), milhouse@ing.usac.edu.gt, (Ralph321@ing.usac.edu.gt), (homero@ing.usac.edu.gt), carl092@ing.usac.edu.gt
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        Mexico, 16/12/2020
+        Reportado por: (carl092@ing.usac.edu.gt)
+        Usuarios afectados: (carl092@ing.usac.edu.gt), lisa@ing.usac.edu.gt, ("Nombre" bart@ing.usac.edu.gt)
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 21/06/2020
+        Reportado por: (homero@ing.usac.edu.gt)
+        Usuarios afectados: Ralph321@ing.usac.edu.gt, (moe@ing.usac.edu.gt)
+        Error: 20005 - Medios equivocados
+    </EVENTO>
+    <EVENTO>
+        USA, 20/04/2021
+        Reportado por: (bart@ing.usac.edu.gt)
+        Usuarios afectados: ("Nombre" homero@ing.usac.edu.gt), (mrburns@ing.usac.edu.gt), apu@ing.usac.edu.gt
+        Error: 20004 - Demasiados registros enviados
+    </EVENTO>
+    <EVENTO>
+        Panama, 21/06/2020
+        Reportado por: (edna@ing.usac.edu.gt)
+        Usuarios afectados: (nelson@ing.usac.edu.gt), ("Nombre" Ralph321@ing.usac.edu.gt), (nelson@ing.usac.edu.gt), ("Nombre" Ralph321@ing.usac.edu.gt)
+        Error: 20008 - Lugar equivocado
+    </EVENTO>
+    <EVENTO>
+        Mexico, 09/08/2019
+        Reportado por: (Ralph321@ing.usac.edu.gt)
+        Usuarios afectados: ("Nombre" nelson@ing.usac.edu.gt), ("Nombre" lisa@ing.usac.edu.gt), moe@ing.usac.edu.gt
+        Error: 20001 - Desbordamiento de bufer de memoria RAM
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 30/11/2019
+        Reportado por: ("Nombre" apu@ing.usac.edu.gt)
+        Usuarios afectados: (lisa@ing.usac.edu.gt), ("Nombre" edna@ing.usac.edu.gt), nelson@ing.usac.edu.gt
+        Error: 20003 - Sobrecarga de informacion
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 01/06/2020
+        Reportado por: ("Nombre" nelson@ing.usac.edu.gt)
+        Usuarios afectados: (lisa@ing.usac.edu.gt), (barni@ing.usac.edu.gt), ("Nombre" apu@ing.usac.edu.gt), (homero@ing.usac.edu.gt), (apu@ing.usac.edu.gt), apu@ing.usac.edu.gt, carl092@ing.usac.edu.gt
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        Panama, 23/09/2019
+        Reportado por: ("Nombre" apu@ing.usac.edu.gt)
+        Usuarios afectados: (carl092@ing.usac.edu.gt), (mrburns@ing.usac.edu.gt)
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        Mexico, 20/04/2021
+        Reportado por: (lisa@ing.usac.edu.gt)
+        Usuarios afectados: homero@ing.usac.edu.gt, ("Nombre" nelson@ing.usac.edu.gt), mrburns@ing.usac.edu.gt, ned@ing.usac.edu.gt, ned@ing.usac.edu.gt, carl092@ing.usac.edu.gt, (edna@ing.usac.edu.gt)
+        Error: 20001 - Desbordamiento de bufer de memoria RAM
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 21/06/2020
+        Reportado por: barni@ing.usac.edu.gt
+        Usuarios afectados: (milhouse@ing.usac.edu.gt), mrburns@ing.usac.edu.gt, ("Nombre" milhouse@ing.usac.edu.gt), ("Nombre" barni@ing.usac.edu.gt), (homero@ing.usac.edu.gt), barni@ing.usac.edu.gt, ("Nombre" mrburns@ing.usac.edu.gt), moe@ing.usac.edu.gt
+        Error: 20005 - Medios equivocados
+    </EVENTO>
+    <EVENTO>
+        Panama, 01/06/2020
+        Reportado por: (mrburns@ing.usac.edu.gt)
+        Usuarios afectados: ("Nombre" barni@ing.usac.edu.gt), (mrburns@ing.usac.edu.gt), ("Nombre" bart@ing.usac.edu.gt), lisa@ing.usac.edu.gt, (carl092@ing.usac.edu.gt), (bart@ing.usac.edu.gt)
+        Error: 20005 - Medios equivocados
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 21/06/2020
+        Reportado por: milhouse@ing.usac.edu.gt
+        Usuarios afectados: (nelson@ing.usac.edu.gt), ("Nombre" Ralph321@ing.usac.edu.gt), ("Nombre" homero@ing.usac.edu.gt), ("Nombre" bart@ing.usac.edu.gt), (ned@ing.usac.edu.gt)
+        Error: 20008 - Lugar equivocado
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 16/12/2020
+        Reportado por: (edna@ing.usac.edu.gt)
+        Usuarios afectados: ("Nombre" ned@ing.usac.edu.gt), carl092@ing.usac.edu.gt, Ralph321@ing.usac.edu.gt, (Ralph321@ing.usac.edu.gt), (barni@ing.usac.edu.gt), (apu@ing.usac.edu.gt)
+        Error: 20008 - Lugar equivocado
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 01/06/2020
+        Reportado por: (carl092@ing.usac.edu.gt)
+        Usuarios afectados: (moe@ing.usac.edu.gt), edna@ing.usac.edu.gt, ("Nombre" carl092@ing.usac.edu.gt), ("Nombre" apu@ing.usac.edu.gt), (milhouse@ing.usac.edu.gt), bart@ing.usac.edu.gt
+        Error: 20001 - Desbordamiento de bufer de memoria RAM
+    </EVENTO>
+    <EVENTO>
+        Mexico, 16/12/2020
+        Reportado por: ("Nombre" Ralph321@ing.usac.edu.gt)
+        Usuarios afectados: bart@ing.usac.edu.gt, ("Nombre" lisa@ing.usac.edu.gt), ("Nombre" mrburns@ing.usac.edu.gt), (ned@ing.usac.edu.gt)
+        Error: 20003 - Sobrecarga de informacion
+    </EVENTO>
+    <EVENTO>
+        Panama, 30/11/2019
+        Reportado por: (edna@ing.usac.edu.gt)
+        Usuarios afectados: ned@ing.usac.edu.gt, (mrburns@ing.usac.edu.gt), (Ralph321@ing.usac.edu.gt), (ned@ing.usac.edu.gt)
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 11/02/2021
+        Reportado por: ("Nombre" apu@ing.usac.edu.gt)
+        Usuarios afectados: ("Nombre" ned@ing.usac.edu.gt), ("Nombre" Ralph321@ing.usac.edu.gt), (lisa@ing.usac.edu.gt), mrburns@ing.usac.edu.gt, carl092@ing.usac.edu.gt, mrburns@ing.usac.edu.gt, ("Nombre" nelson@ing.usac.edu.gt)
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        Panama, 23/09/2019
+        Reportado por: (barni@ing.usac.edu.gt)
+        Usuarios afectados: ("Nombre" edna@ing.usac.edu.gt), (edna@ing.usac.edu.gt), (mrburns@ing.usac.edu.gt), ("Nombre" lisa@ing.usac.edu.gt), barni@ing.usac.edu.gt
+        Error: 20005 - Medios equivocados
+    </EVENTO>
+    <EVENTO>
+        USA, 11/02/2021
+        Reportado por: nelson@ing.usac.edu.gt
+        Usuarios afectados: edna@ing.usac.edu.gt, (ned@ing.usac.edu.gt)
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 09/08/2019
+        Reportado por: carl092@ing.usac.edu.gt
+        Usuarios afectados: milhouse@ing.usac.edu.gt, homero@ing.usac.edu.gt, ("Nombre" bart@ing.usac.edu.gt), (lisa@ing.usac.edu.gt), ("Nombre" bart@ing.usac.edu.gt), moe@ing.usac.edu.gt, moe@ing.usac.edu.gt, ("Nombre" apu@ing.usac.edu.gt)
+        Error: 20003 - Sobrecarga de informacion
+    </EVENTO>
+    <EVENTO>
+        Mexico, 11/02/2021
+        Reportado por: nelson@ing.usac.edu.gt
+        Usuarios afectados: (bart@ing.usac.edu.gt), carl092@ing.usac.edu.gt, Ralph321@ing.usac.edu.gt, ("Nombre" homero@ing.usac.edu.gt), Ralph321@ing.usac.edu.gt, milhouse@ing.usac.edu.gt
+        Error: 20005 - Medios equivocados
+    </EVENTO>
+    <EVENTO>
+        Mexico, 15/04/2020
+        Reportado por: ("Nombre" milhouse@ing.usac.edu.gt)
+        Usuarios afectados: edna@ing.usac.edu.gt, ("Nombre" bart@ing.usac.edu.gt), carl092@ing.usac.edu.gt, ("Nombre" bart@ing.usac.edu.gt), ("Nombre" bart@ing.usac.edu.gt), ("Nombre" milhouse@ing.usac.edu.gt), carl092@ing.usac.edu.gt
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        Panama, 30/11/2019
+        Reportado por: moe@ing.usac.edu.gt
+        Usuarios afectados: barni@ing.usac.edu.gt, carl092@ing.usac.edu.gt, (edna@ing.usac.edu.gt)
+        Error: 20004 - Demasiados registros enviados
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 20/04/2021
+        Reportado por: ("Nombre" apu@ing.usac.edu.gt)
+        Usuarios afectados: (mrburns@ing.usac.edu.gt), (lisa@ing.usac.edu.gt), ("Nombre" homero@ing.usac.edu.gt), mrburns@ing.usac.edu.gt, (homero@ing.usac.edu.gt)
+        Error: 20008 - Lugar equivocado
+    </EVENTO>
+</EVENTOS>
